@@ -15,22 +15,22 @@ https://www.youtube.com/watch?v=xesIS-t-UhA
 Стартовый проект: https://github.com/Salimov-dev/zustand-course-start   
 Итоговый проект: https://github.com/Salimov-dev/zustand-crash-course   
 
--------------------
-Таймкоды:
-00:00 - Приветствие
-01:08 - Клонирование проекта
-02:37 - Знакомство с проектом 
-03:41 - Про пропс-дриллинг
-04:08 - Про слои абстракции
-04:36 - Устанавливаем Zustand и создаем counterStore
-11:39 - Применяем counterStore в приложении
-19:19 - Улучшаем код counterStore
-22:02 - Применяем middleware Persist
-25:27 - Применяем middleware devtools
-28:10 - Подготавливаем второй проект Todos
-31:23 - Разрабатываем todoStore
-39:45 - Применяем todoStore в приложении
-42:35 - Применяем middleware Immer
-44:28 - Конец
+-------------------   
+Таймкоды:   
+00:00 - Приветствие   
+01:08 - Клонирование проекта   
+02:37 - Знакомство с проектом    
+03:41 - Про пропс-дриллинг   
+04:08 - Про слои абстракции   
+04:36 - Устанавливаем Zustand и создаем counterStore   
+11:39 - Применяем counterStore в приложении   
+19:19 - Улучшаем код counterStore   
+22:02 - Применяем middleware Persist   
+25:27 - Применяем middleware devtools   
+28:10 - Подготавливаем второй проект Todos   
+31:23 - Разрабатываем todoStore   
+39:45 - Применяем todoStore в приложении   
+42:35 - Применяем middleware Immer   
+44:28 - Конец   
 
 ![image](https://github.com/user-attachments/assets/854d1b62-b885-43bd-ae71-7eda876edb19)

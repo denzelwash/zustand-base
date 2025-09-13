@@ -1,17 +1,20 @@
-import type { FC } from "react";
+import { useCounterStore } from '../store'
+import { useShallow } from 'zustand/shallow'
 
-interface IProps {
-  onIncrement: () => void;
-  onDecrement: () => void;
+const ButtonsContainer = () => {
+	const { inc, dec } = useCounterStore(
+		useShallow((state) => ({
+			inc: state.inc,
+			dec: state.dec
+		}))
+	)
+
+	return (
+		<div className="card">
+			<button onClick={inc}>Увеличить число</button>
+			<button onClick={dec}>Уменьшить число</button>
+		</div>
+	)
 }
 
-const ButtonsContainer: FC<IProps> = ({ onIncrement, onDecrement }) => {
-  return (
-    <div className="card">
-      <button onClick={onIncrement}>Увеличить число</button>
-      <button onClick={onDecrement}>Уменьшить число</button>
-    </div>
-  );
-};
-
-export default ButtonsContainer;
+export default ButtonsContainer

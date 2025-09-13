@@ -1,5 +1,5 @@
-import { create } from 'zustand'
-import { devtools } from 'zustand/middleware'
+import { create, type StateCreator } from 'zustand'
+import { devtools, persist } from 'zustand/middleware'
 
 interface InitialState {
 	count: number
@@ -17,14 +17,24 @@ const initialState: InitialState = {
 	count: 0
 }
 
-const useCounterStore = create<CounterState>()(
-	devtools((set) => ({
-		...initialState,
-		inc: () => set((state) => ({ count: state.count + 1 })),
-		dec: () => set((state) => ({ count: state.count - 1 })),
-		set: (counter) => set({ count: counter })
-	}))
-)
+const counterStore: StateCreator<CounterState, [['zustand/devtools', never], ['zustand/persist', unknown]]> = (
+	set
+) => ({
+	...initialState,
+	inc: () => set((state) => ({ count: state.count + 1 }), undefined, 'inc'),
+	dec: () => set((state) => ({ count: state.count - 1 }), undefined, 'dec'),
+	set: (counter) => set({ count: counter })
+})
+
+const useCounterStore = create<CounterState>()(devtools(persist(counterStore, { name: 'counter-storage' })))
+
+// Базовый вариант
+// const useCounterStore = create<CounterState>()((set) => ({
+// 	...initialState,
+// 	inc: () => set((state) => ({ count: state.count + 1 })),
+// 	dec: () => set((state) => ({ count: state.count - 1 })),
+// 	set: (counter) => set({ count: counter })
+// }))
 
 // Селекторы и экшены для идеального варика
 const useCount = () => useCounterStore((state) => state.count)

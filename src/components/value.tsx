@@ -1,7 +1,7 @@
-import { useCounterStore } from '../stores/useCounterStore'
+import { useCount } from '../stores/useCounterStore'
 
 const Value = () => {
-	const count = useCounterStore((state) => state.count)
+	const count = useCount()
 
 	return <h2>{count}</h2>
 }

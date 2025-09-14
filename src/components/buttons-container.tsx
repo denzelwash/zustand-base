@@ -1,4 +1,4 @@
-import { useCounterStore } from '../store'
+import { useCounterStore } from '../stores/useCounterStore'
 import { useShallow } from 'zustand/shallow'
 
 const ButtonsContainer = () => {
